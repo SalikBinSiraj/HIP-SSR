@@ -1,27 +1,28 @@
+import { usePageContext } from '../../renderer/usePageContext'
+
 import React from 'react'
 import '../../assets/css/prk_overview.css'
 import useFetch from "react-fetch-hook";
-import { useParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Overview() {
 
-    let { slug } = useParams(); 
+    let slug = usePageContext().routeParams.slug
     const { isLoading, data, error } = useFetch(
       `https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/parks/?slug=${slug}`
     );
 
     // gloabl line GSAP
-    gsap.registerPlugin(ScrollTrigger); 
+    gsap.registerPlugin(ScrollTrigger);
 
     // Heading text animation variable
     const txt_animate_pi_1 = useRef(null);
     const park_in_fade = useRef(null);
 
     useEffect(() => {
-    
+
         // Heading text animation code
         gsap.to("#txt_animate_pi_1", {
             y:0,
@@ -51,7 +52,7 @@ export default function Overview() {
     return (
         <>
             <div className='ovrview_sec snap_sec mob_pd_LR tab_pd_LR'>
-                
+
                 <div className='cstm_container'>
 
                     <div className='row ' >
@@ -63,12 +64,12 @@ export default function Overview() {
                             </div>
                             {data && data.map(({ id, title , acf , content }) => (
                                 <div>
-                             
+
                                     <p className='sub_para ovrview_subpara prk_ovr_1' dangerouslySetInnerHTML={{ __html: acf.park_hd_para }}></p>
                                     <p className='para ovrview_para' dangerouslySetInnerHTML={{ __html: acf.park_para1 }}></p>
                                     <p className='para ovrview_para' dangerouslySetInnerHTML={{ __html: content.rendered }}></p>
                                 </div>
-                            ))} 
+                            ))}
 
                         </div>
 
@@ -76,7 +77,7 @@ export default function Overview() {
 
                             {data && data.map(({ id, title , acf , content }) => (
                                 <div className='ovrview_div'>
-                                    
+
                                     <div className='ovr_lnd_area_spc'>
                                         <p className='ovrview_subpoints'>Land area</p>
                                         <p className='ovrview_subpoints_sub_heading'>{acf.land_area}</p>
@@ -95,14 +96,14 @@ export default function Overview() {
                                     </div> */}
 
                                 </div>
-                            ))} 
+                            ))}
 
                         </div>
                     </div>
 
 
                 </div>
-                
+
             </div>
 
         </>

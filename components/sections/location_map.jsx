@@ -1,21 +1,22 @@
+import { usePageContext } from '../../renderer/usePageContext'
+
 import React from 'react'
 import '../../assets/css/location_map.css';
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import $ from "jquery";
 import useFetch from "react-fetch-hook";
-import { useParams } from "react-router-dom";
 
 export default function Location_map() {
 
-    let { slug } = useParams(); 
+    let slug = usePageContext().routeParams.slug
     const { isLoading, data, error } = useFetch(
       `https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/parks/?slug=${slug}`
     );
 
     // gloabl line GSAP
-    gsap.registerPlugin(ScrollTrigger); 
+    gsap.registerPlugin(ScrollTrigger);
 
     // Heading text animation variable
     const txt_animate_pi_2 = useRef(null);
@@ -33,7 +34,7 @@ export default function Location_map() {
                 markers: false
             }
         });
-       
+
         $('.con_name').on("click", function() {
             $('.loc_map_name').css('color','#fff');
             $(this).find('.loc_map_name').css('color','#313D47');
@@ -68,8 +69,8 @@ export default function Location_map() {
             $('#main_acc'+$(this).attr('target')).fadeIn();
         });
 
-        
-        
+
+
         $('#connectivity').on("click", function() {
 
             $('#con1').fadeIn();
@@ -80,7 +81,7 @@ export default function Location_map() {
         });
 
         $('#industrial').on("click", function() {
-            
+
             $('#indust1').fadeIn();
             $('.connectivity_map').fadeOut();
             $('.industrial_map').fadeIn();
@@ -102,11 +103,11 @@ export default function Location_map() {
   return (
     <>
         <div className='location_map_sec snap_sec'>
-            
+
             <div className='row no_LR_margin'>
 
                 <div className='col-lg-6 col-md-12 col-12 loca_map_col1'>
-                   
+
                     {/* <h2 className='section_heading loc_map_hd'>Ease of Access</h2> */}
 
                     <div className="animate_txt ">
@@ -115,7 +116,7 @@ export default function Location_map() {
 
                     {data && data.map(({ id, title , acf  }) => (
 
-                  
+
                     <div id="accordion1" className='accord_dv loc_map_accord'>
                         <div className="card intg_card">
                             <div className="card-header intg_card_header">
@@ -132,7 +133,7 @@ export default function Location_map() {
                                                 <span className=''></span>
                                                 <p className='loc_map_name'>{sub.location_name} {sub.location_km}</p>
                                             </div>
-                                        )} 
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +147,7 @@ export default function Location_map() {
                             </div>
                             <div id="collapseTwo" className="collapse" data-bs-parent="#accordion1">
                                 <div className="card-body loc_map_body">
-                                    <div className='map_loc_div'>    
+                                    <div className='map_loc_div'>
                                         {acf.industrial_clusters_nearby.map((sub)=>
                                             <div className='loc_map_name_div   indust_name' target={sub.no}>
                                                 <span className=''></span>
@@ -179,9 +180,9 @@ export default function Location_map() {
                         </div>
 
                     </div>
-                    
 
-                    ))} 
+
+                    ))}
 
                 </div>
 
@@ -190,15 +191,15 @@ export default function Location_map() {
 
                     {/* Connectivity Map div */}
                     <div className='connectivity_map outer_div_map'>
-                        
+
                         <div className='inner_div_map'>
 
                             {acf.connectivity.map((sub)=>
                                 <div className='map_div' id={`con${sub.no}`}>
                                     <iframe src={sub.map_embed} ></iframe>
                                 </div>
-                            )} 
-                           
+                            )}
+
                         </div>
 
                     </div>
@@ -212,7 +213,7 @@ export default function Location_map() {
                                 <div className='map_div' id={`indust${sub.no}`}>
                                     <iframe src={sub.map_embed} ></iframe>
                                 </div>
-                            )} 
+                            )}
 
                         </div>
 
@@ -222,21 +223,21 @@ export default function Location_map() {
                     <div className='main_access_map outer_div_map'>
 
                         <div className='inner_div_map'>
-                            
+
                             {acf.main_access.map((sub)=>
                                 <div className='map_div' id={`main_acc${sub.no}`}>
                                     <iframe src={sub.map_embed} ></iframe>
                                 </div>
-                            )} 
+                            )}
 
                         </div>
 
                     </div>
                 </div>
-                 ))} 
+                 ))}
 
             </div>
-            
+
         </div>
     </>
   )

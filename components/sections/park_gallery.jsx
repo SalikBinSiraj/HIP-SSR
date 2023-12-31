@@ -1,17 +1,21 @@
+import { usePageContext } from '../../renderer/usePageContext'
+
 import React from 'react'
 import Slider from 'react-slick';
 import '../../assets/css/park_gallery.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useFetch from "react-fetch-hook";
-import { useParams } from "react-router-dom";
+
+import closeIconWht from '../../assets/img/svg/close_icon_wht.svg'
+import lightBoxIcon from '../../assets/img/svg/lightbox_icon.svg'
 
 import $ from "jquery";
 import { useEffect } from 'react';
 // import Vimeo from '@u-wave/react-vimeo';
 export default function Park_gallery() {
 
-    let { slug } = useParams(); 
+    let slug = usePageContext().routeParams.slug
     const { isLoading, data, error } = useFetch(
       `https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/parks/?slug=${slug}`
     );
@@ -81,8 +85,8 @@ export default function Park_gallery() {
         // });
 
 
-    
-     
+
+
 
         var pathname = window.location.pathname;
         console.log(pathname);
@@ -108,7 +112,7 @@ export default function Park_gallery() {
             $('.photo_tabs_li').show();
             $('.video_tabs_li').show();
         }
-        
+
     })
 
   return (
@@ -124,7 +128,7 @@ export default function Park_gallery() {
                 </div>
                 <div className='row prk_tab_content_row no_LR_margin'>
                     <div className='col-lg-3 col-md-6 col-12'>
-                        
+
                         {/* Tab Nav */}
                         <ul className="nav nav-pills prk_gallery_tabs" role="tablist">
 
@@ -148,22 +152,22 @@ export default function Park_gallery() {
 
                                 {/* Siteplan  */}
                                 <div id="siteplan" className="tab-pane  active">
-                                    
+
                                     {/* <div className='row'>
 
-                                        {acf.site_plan.map(siteplan_photo => (    
+                                        {acf.site_plan.map(siteplan_photo => (
                                             <div className='col-lg-6 col-lg-6 col-12 siteplan_img_col' key={id}>
                                                 <img className='sitepln_img' src={siteplan_photo}></img>
                                             </div>
                                         ))}
-                                        
+
                                     </div> */}
 
                                     <Slider {...park_photo} className='park_photo_slider'>
-                                        
+
                                         {/* item */}
 
-                                        {acf.site_plan.map(siteplan_photo => (    
+                                        {acf.site_plan.map(siteplan_photo => (
                                             <div className='prk_p_slide' key={id}>
                                                 <div className='prk_photo_content'>
                                                     <img src={siteplan_photo}></img>
@@ -174,7 +178,7 @@ export default function Park_gallery() {
                                     </Slider>
                                     {/* Siteplan lightbox START*/}
                                     <div className='lightbox_btn siteplan_btn'>
-                                        <img src={require('../../assets/img/svg/lightbox_icon.svg').default}></img>
+                                        <img src={lightBoxIcon}></img>
                                     </div>
                                     {/* Siteplan lightbox END*/}
 
@@ -184,10 +188,10 @@ export default function Park_gallery() {
                                 <div id="photos" className="tab-pane fade">
 
                                     <Slider {...park_photo} className='park_photo_slider'>
-                                        
+
                                         {/* item */}
 
-                                        {acf.photo.map(sngl_photo => (    
+                                        {acf.photo.map(sngl_photo => (
                                             <div className='prk_p_slide' key={id}>
                                                 <div className='prk_photo_content'>
                                                     <img src={sngl_photo}></img>
@@ -199,17 +203,17 @@ export default function Park_gallery() {
 
                                     {/* Photo lightbox START*/}
                                     <div className='lightbox_btn photo_btn'>
-                                        <img src={require('../../assets/img/svg/lightbox_icon.svg').default}></img>
+                                        <img src={lightBoxIcon}></img>
                                     </div>
                                     {/* Photo lightbox END*/}
 
                                 </div>
-                                
+
                                 {/* Video */}
                                 <div id="video" className="tab-pane fade">
 
                                     <Slider {...park_photo} className='park_photo_slider'>
-                                        
+
                                         {/* item */}
 
                                         {acf.video_vimeo_link.map((sub)=>
@@ -228,21 +232,21 @@ export default function Park_gallery() {
                                     </Slider>
 
                                 </div>
-                            </div>    
+                            </div>
 
                     </div>
                 </div>
-            </div> 
+            </div>
 
-            {/* Siteplan Lightbox Start*/} 
+            {/* Siteplan Lightbox Start*/}
             <div className='park_lightbox siteplan_light_box'>
 
                 <div className='inner_light_box siteplan_inner'>
-                    <img className='close_btn' src={require('../../assets/img/svg/close_icon_wht.svg').default}></img>
+                    <img className='close_btn' src={closeIconWht}></img>
 
                     <Slider {...park_lightbox_photo} className='park_lightbox_photo'>
 
-                        {acf.site_plan.map(siteplan_photo => (    
+                        {acf.site_plan.map(siteplan_photo => (
                             <div className='lb_prk_sld prk_siteplan_sld' key={id}>
                                 <div className='lb_prk_sld_content siteplan_img_div prk_siteplan_img_div'>
                                     <img src={siteplan_photo}></img>
@@ -252,19 +256,19 @@ export default function Park_gallery() {
 
                     </Slider>
                 </div>
-            </div>   
-            {/* Siteplan Lightbox End*/}    
-            
-                                            
-            {/* Photo Lightbox Start*/} 
+            </div>
+            {/* Siteplan Lightbox End*/}
+
+
+            {/* Photo Lightbox Start*/}
             <div className='park_lightbox photo_light_box'>
 
                 <div className='inner_light_box'>
-                    <img className='close_btn' src={require('../../assets/img/svg/close_icon_wht.svg').default}></img>
+                    <img className='close_btn' src={closeIconWht}></img>
 
                     <Slider {...park_lightbox_photo} className='park_lightbox_photo'>
 
-                        {acf.photo.map(sngl_photo => (    
+                        {acf.photo.map(sngl_photo => (
                             <div className='lb_prk_sld' key={id}>
                                 <div className='lb_prk_sld_content'>
                                     <img src={sngl_photo}></img>
@@ -274,12 +278,12 @@ export default function Park_gallery() {
 
                     </Slider>
                 </div>
-            </div>   
-            {/* Photo Lightbox End*/}    
+            </div>
+            {/* Photo Lightbox End*/}
 
 
-        </div>  
-        ))} 
+        </div>
+        ))}
     </>
   )
 }

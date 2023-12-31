@@ -1,17 +1,20 @@
+import { usePageContext } from '../../renderer/usePageContext'
+
 import React from 'react'
 import '../../assets/css/park_inside_spotlight.css';
 import useFetch from "react-fetch-hook";
-import { useParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Helmet from 'react-helmet';
 import $ from "jquery";
 import Error_page from '../../pages/error_page';
 
+import slideArrow from '../../assets/img/home_sldr_arrow.png'
+
 export default function Park_inside_spotlight() {
-    
-  let { slug } = useParams(); 
+
+  let slug = usePageContext().routeParams.slug
   const { isLoading, data, error } = useFetch(
     `https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/parks/?slug=${slug}`
   );
@@ -19,10 +22,10 @@ export default function Park_inside_spotlight() {
   useEffect(() => {
 
     var prk_url = window.location.pathname;
-    // var prk_url1 = '/parks/'+ slug; 
+    // var prk_url1 = '/parks/'+ slug;
     // console.log("URL0 "+ prk_url);
     // console.log("URL1 "+ prk_url1);
- 
+
     $(document).ready(function () {
 
         $.ajax({
@@ -64,10 +67,10 @@ export default function Park_inside_spotlight() {
                         <title>{acf.meta_title}</title>
                         <meta name="description" content={acf.meta_description} />
                 </Helmet>
-                
-               
+
+
                 <img src={acf.park_spotlight_image} className='park_inside_bg_img'></img>
-                <img className='inside_spotlight_arrow' src={require('../../assets/img/home_sldr_arrow.png')}></img> 
+                <img className='inside_spotlight_arrow' src={slideArrow}></img>
 
                 <div className='breadcrum_div'>
                     <div className='cstm_container'>
@@ -80,7 +83,7 @@ export default function Park_inside_spotlight() {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div className='spotlight_content_dv'>
                 <div className='cstm_container'>
@@ -103,7 +106,7 @@ export default function Park_inside_spotlight() {
                 </div>
             </div>
         </div>
-        ))} 
+        ))}
     </>
   )
 }
