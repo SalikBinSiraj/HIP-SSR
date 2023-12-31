@@ -1,20 +1,23 @@
 import React from 'react'
 import '../../assets/css/park_inside_spotlight.css';
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+import homeSlideArrow from '../../assets/img/home_sldr_arrow.png'
+import pressRelease from '../../assets/img/press_release.jpg'
 
 export default function Pr_spotlight() {
 
-    
+
     // gloabl line GSAP
-    gsap.registerPlugin(ScrollTrigger); 
+    gsap.registerPlugin(ScrollTrigger);
 
     // Heading text animation variable
     const spot_hd_anmt_cont = useRef(null);
 
     useEffect(() => {
-    
+
         // Heading text animation code
         gsap.to("#spot_hd_anmt_cont", {
             y:0,
@@ -34,9 +37,9 @@ export default function Pr_spotlight() {
 
 
         <div className='park_inside_spotlight_sec'>
-           
-           <img src={require('../../assets/img/press_release.jpg')} className='park_inside_bg_img'></img>
-           <img className='inside_spotlight_arrow' src={require('../../assets/img/home_sldr_arrow.png')}></img>
+
+           <img src={pressRelease} className='park_inside_bg_img'></img>
+           <img className='inside_spotlight_arrow' src={homeSlideArrow}></img>
 
            <div className='breadcrum_div'>
                <div className='cstm_container'>
@@ -48,7 +51,7 @@ export default function Pr_spotlight() {
                        </div>
                    </div>
                </div>
-               
+
            </div>
        </div>
 

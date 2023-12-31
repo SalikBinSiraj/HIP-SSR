@@ -1,3 +1,5 @@
+import { usePageContext } from '../../renderer/usePageContext'
+
 import React from 'react'
 import '../../assets/css/park_inside_spotlight.css';
 import '../../assets/css/blog_inside_spotlight.css';
@@ -8,8 +10,8 @@ import Helmet from 'react-helmet';
 import $ from "jquery";
 
 export default function Blog_inside_spotlight() {
+    let slug = usePageContext().routeParams.slug
 
-    let { slug } = useParams(); 
     const { isLoading, data, error } = useFetch(
         `https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/posts/?slug=${slug}`
     );
@@ -18,12 +20,12 @@ export default function Blog_inside_spotlight() {
     useEffect(() => {
 
       var post_url = window.location.pathname;
-      // var post_url1 = '/blog/'+ slug; 
+      // var post_url1 = '/blog/'+ slug;
       // console.log("URL0 "+ post_url);
       // console.log("URL1 "+ post_url1);
-   
+
       $(document).ready(function () {
-  
+
           $.ajax({
               url: `https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/posts/?slug=${slug}`,
               type: 'GET',
@@ -33,7 +35,7 @@ export default function Blog_inside_spotlight() {
                   var slugs = data.map(function(item) {
                       return item.slug;
                   });
-  
+
                   // Log the slug values to the console (you can do whatever you want with them)
                   console.log(slugs);
                   if (post_url === '/blog/'+ slugs) {
@@ -47,11 +49,11 @@ export default function Blog_inside_spotlight() {
                   console.log('Error:', error);
               }
           });
-  
+
       });
-  
+
     });
-    
+
 
   return (
     <>
@@ -71,7 +73,7 @@ export default function Blog_inside_spotlight() {
 
             </Helmet>
 
-        ))} 
+        ))}
     </>
   )
 }

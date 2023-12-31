@@ -1,6 +1,6 @@
 import React from 'react'
 import useFetch from "react-fetch-hook";
-
+import dateIcon from '../../../assets/img/svg/date_icon.svg'
 export default function Blog_rlat_artical(props) {
 
     const { isLoading, data, error } = useFetch(
@@ -23,7 +23,7 @@ export default function Blog_rlat_artical(props) {
                             </div>
                             <div className='rlt_artcl2'>
                                 <h2 className='para' dangerouslySetInnerHTML={{ __html: title }}></h2>
-                                <p className='bl_bx_date'><img className='date_icon' src={require('../../../assets/img/svg/date_icon.svg').default}></img>{acf.blog_publish_date}</p>
+                                <p className='bl_bx_date'><img className='date_icon' src={dateIcon}></img>{acf.blog_publish_date}</p>
                             </div>
                             <a class="blog_read_more_btn" href={'/blog/'+ slug}>Read More</a>
                         </div>

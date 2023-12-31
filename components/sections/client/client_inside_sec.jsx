@@ -15,9 +15,11 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import $ from 'jquery';
 
+import homeSliderArrow from '../../../assets/img/home_sldr_arrow.png'
+
 export default function Client_inside_sec() {
 
-    let { slug } = useParams(); 
+    let { slug } = useParams();
     const { isLoading, data, error } = useFetch(
         `https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/client_stories/?slug=${slug}`
     );
@@ -31,10 +33,10 @@ export default function Client_inside_sec() {
             $('.hide_content').slideToggle(200);
             var btn_txt = document.getElementById("read_more_btn").text;
             if(btn_txt === 'Read More '){
-                console.log('Read More');  
+                console.log('Read More');
             }
             else if(btn_txt === 'Read Less '){
-                console.log('Read Less'); 
+                console.log('Read Less');
             }
         });
 
@@ -47,7 +49,7 @@ export default function Client_inside_sec() {
             <div className='client_inside_sec '>
                     <div className='cstm_container'>
                         <div className='row no_LR_margin'>
-                            
+
                             <div className='col-lg-7 col-md-7 col-12 ovrview_col cstm'>
                                 {/* <p className='section_sub_heading ovrview_sub_hd'>Overview</p> */}
 
@@ -67,9 +69,9 @@ export default function Client_inside_sec() {
                                     <div className='ovr_lnd_area_spc prduct_prt'>
                                         <p className='ovrview_subpoints' dangerouslySetInnerHTML={{ __html: acf.product_manufacture_title }}></p>
                                         <p className='ovrview_subpoints_sub_heading cstm' dangerouslySetInnerHTML={{ __html: acf.product_manufacture_paragraph }}></p>
-                                        
+
                                         <p className='hide_content ovrview_subpoints_sub_heading cstm' dangerouslySetInnerHTML={{ __html: acf.product_manufacture_readmore_paragraph }}></p>
-                                        <a className='read_more_btn' id='read_more_btn' data-content="toggle-text">Read More</a>    
+                                        <a className='read_more_btn' id='read_more_btn' data-content="toggle-text">Read More</a>
                                     </div>
 
                                 </div>
@@ -99,7 +101,7 @@ export default function Client_inside_sec() {
                         <div className='row no_LR_margin'>
                             <div className='col-12 bg_img_col'>
                                 <img className='img-client-pg'  alt={acf.image_alt_tag} src={acf.glance_background_image} />
-                                <img className='inside_spotlight_arrow client_pg' alt={acf.image_alt_tag} src={require('../../../assets/img/home_sldr_arrow.png')}></img>
+                                <img className='inside_spotlight_arrow client_pg' alt={acf.image_alt_tag} src={homeSliderArrow}></img>
                             </div>
                         </div>
 
@@ -109,8 +111,8 @@ export default function Client_inside_sec() {
                                 <div className='col-lg-12'>
                                     <div className='content-box'>
 
-                                          
-                                       
+
+
 
                                         {acf.glance_details.map((glance_sub)=>
                                             <div className='box-one' key={id}>
@@ -189,7 +191,7 @@ export default function Client_inside_sec() {
 
                         </div>
 
-                        <div className='key_section'>                  
+                        <div className='key_section'>
                             <div className='cstm_container case-std key_forword'>
                                 <div className='row no_LR_margin '>
 
@@ -205,7 +207,7 @@ export default function Client_inside_sec() {
                                     </div>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
 
                         {/* <div className='slider_image cc_gallery_sec'>
                             <div className='cstm_container case-std'>
@@ -240,8 +242,8 @@ export default function Client_inside_sec() {
                                                 navigation={true}
                                                 className="mySwiper news_slider cc_gallery_slder"
                                             >
-                                                    
-                                                {acf.image_gallery.map(image_gallery_photo => (    
+
+                                                {acf.image_gallery.map(image_gallery_photo => (
                                                 <SwiperSlide >
                                                     <div className='slider_img cc_grly_sld' key={id}>
                                                         <img src={image_gallery_photo}></img>

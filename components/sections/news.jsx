@@ -3,17 +3,17 @@ import useFetch from "react-fetch-hook";
 import '../../assets/css/news.css';
 
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import News_slider from './news_slider';
 import Press_rels_slider from './press_rels_slider';
 
 export default function News() {
 
-    
-   
+
+
     // gloabl line GSAP
-    gsap.registerPlugin(ScrollTrigger); 
+    gsap.registerPlugin(ScrollTrigger);
 
     // Para animation variable
     const news_hd = useRef(null);
@@ -50,7 +50,7 @@ export default function News() {
 
 
   }, []);
-    
+
   return (
     <>
       <div className='news_slider_sec snap_sec'>
@@ -82,7 +82,7 @@ export default function News() {
                                 <News_slider/>
                               </div>
 
-                              {/* Press Releases Tab */}          
+                              {/* Press Releases Tab */}
                               <div id="press_rels" className="tab-pane fade client_logo_tab"><br />
                                   <Press_rels_slider/>
                               </div>
