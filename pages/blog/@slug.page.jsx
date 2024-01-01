@@ -1,6 +1,5 @@
 export { Page }
 
-import { usePageContext } from '../../renderer/usePageContext'
 import React from 'react'
 
 import Header from '../../components/global/header';

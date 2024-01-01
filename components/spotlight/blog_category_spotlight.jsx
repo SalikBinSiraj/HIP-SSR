@@ -1,25 +1,29 @@
+import { usePageContext } from '../../renderer/usePageContext'
+
 import React from 'react'
 import '../../assets/css/park_inside_spotlight.css';
-import { useParams } from "react-router-dom";
 import useFetch from "react-fetch-hook";
+
+import blogSpotlight from '../../assets/img/blog_spotlight_new.jpg';
+import slideArrow from '../../assets/img/home_sldr_arrow.png';
 
 export default function Blog_category_spotlight() {
 
-    let { id } = useParams();
+    let id = usePageContext().routeParams.id
 
     const { isLoading, data, error } = useFetch(
       `https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/posts?categories=${id}&per_page=1`
     );
 
 
-    
+
   return (
     <>
         <div className='park_inside_spotlight_sec'>
-           
-            <img src={require('../../assets/img/blog_spotlight_new.jpg')} className='park_inside_bg_img'></img>
-            <img className='inside_spotlight_arrow' src={require('../../assets/img/home_sldr_arrow.png')}></img>
-         
+
+            <img src={blogSpotlight} className='park_inside_bg_img'></img>
+            <img className='inside_spotlight_arrow' src={slideArrow}></img>
+
             <div className='breadcrum_div'>
                 <div className='cstm_container'>
                     <div className='row'>
@@ -34,7 +38,7 @@ export default function Blog_category_spotlight() {
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
         <div className='spotlight_content_dv'>
