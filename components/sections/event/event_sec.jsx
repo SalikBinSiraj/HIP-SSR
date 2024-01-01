@@ -1,3 +1,5 @@
+import { usePageContext } from '../../../renderer/usePageContext'
+
 import React from 'react'
 import {NavLink , Link} from "react-router-dom";
 import Slider from 'react-slick';
@@ -10,13 +12,12 @@ import Event_year from './event_year';
 import $ from "jquery";
 import Event_slider from './event_slider';
 import Event_category from './event_category';
-import { useParams } from "react-router-dom";
 
 import DateIcon from '../../../assets/img/svg/date_icon.svg';
 
 export default function Event_sec() {
 
-    let { slug } = useParams();
+    let slug = usePageContext().routeParams.slug
     useEffect(() => {
 
 
@@ -287,7 +288,8 @@ export default function Event_sec() {
                         {data && data.map(({ id , acf , content , title , event_year , event_categories , slug}) => (
                             // <div className='col-lg-6 col-md-6 col-12 event_box_col js-filterable ADD' key={id} data-year={event_year} data-category={event_categories}>
                             <div className='col-lg-6 col-md-6 col-12 event_box_col js-filterable ADD' key={id} >
-                                <Link to={slug} >
+                                {/* <Link to={slug} > */}
+                                {/* Commentd by Hassam */}
                                     <div className='event_box'  >
                                         <div className='event_img_dv'>
                                             <img className='event_img' src={acf.feature_image}></img>
@@ -295,7 +297,8 @@ export default function Event_sec() {
                                         <h3 className='event_hd' dangerouslySetInnerHTML={{ __html: title.rendered }}></h3>
                                         <p className='event_date'><img src={DateIcon}></img>{acf.date}</p>
                                     </div>
-                                </Link>
+                                {/* Commentd by Hassam */}
+                                {/* </Link> */}
                             </div>
                         ))}
 
