@@ -117,7 +117,7 @@ export default function Location_map() {
                     {data && data.map(({ id, title , acf  }) => (
 
 
-                    <div id="accordion1" className='accord_dv loc_map_accord'>
+                    <div id="accordion" className='accord_dv loc_map_accord'>
                         <div className="card intg_card">
                             <div className="card-header intg_card_header">
                                 <a className="btn intg_btn" data-bs-toggle="collapse" href="#collapseOne" id='connectivity'>
@@ -125,7 +125,7 @@ export default function Location_map() {
                                     CONNECTIVITY
                                 </a>
                             </div>
-                            <div id="collapseOne" className="collapse show" data-bs-parent="#accordion1">
+                            <div id="collapseOne" className="collapse show" data-bs-parent="#accordion">
                                 <div className="card-body loc_map_body">
                                     <div className='map_loc_div'>
                                         {acf.connectivity.map((sub)=>
@@ -145,7 +145,7 @@ export default function Location_map() {
                                     INDUSTRIAL CLUSTERS NEARBY
                                 </a>
                             </div>
-                            <div id="collapseTwo" className="collapse" data-bs-parent="#accordion1">
+                            <div id="collapseTwo" className="collapse" data-bs-parent="#accordion">
                                 <div className="card-body loc_map_body">
                                     <div className='map_loc_div'>
                                         {acf.industrial_clusters_nearby.map((sub)=>
@@ -165,7 +165,7 @@ export default function Location_map() {
                                     Main Access
                                 </a>
                             </div>
-                            <div id="collapseThree" className="collapse" data-bs-parent="#accordion1">
+                            <div id="collapseThree" className="collapse" data-bs-parent="#accordion">
                                 <div className="card-body loc_map_body">
                                     <div className='map_loc_div'>
                                         {acf.main_access.map((sub)=>
