@@ -2,7 +2,7 @@ import { useEffect , useRef }  from 'react'
 
 import Header from '../../components/global/header';
 import Client_spotlight from '../../components/spotlight/client_spotlight';
-import Client_slider from '../../components/sections/client/client_slider';
+// import Client_slider from '../../components/sections/client/client_slider';
 import Client_testimonial from '../../components/sections/client/client_testimonial';
 import Client from '../../components/sections/client';
 import Conversation_form from '../../components/sections/conversation_form';
@@ -38,7 +38,7 @@ export default function Page() {
 
               <Header/>
               <Client_spotlight/>
-              <Client_slider/>
+              {/* <Client_slider/> */}
               {/* <Sticky className='fix-sec'> */}
                 <Client />
               {/* </Sticky> */}
