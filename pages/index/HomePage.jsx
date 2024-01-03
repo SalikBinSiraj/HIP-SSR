@@ -1,5 +1,4 @@
 import React from 'react'
-import loadable from '@loadable/component'
 
 import Header from '../../components/global/header';
 import Home_spotlight_slider from '../../components/spotlight/home_spotlight_slider';
@@ -16,9 +15,8 @@ import Footer from '../../components/global/footer';
 import Sticky from 'react-sticky-el';
 
 import Transition from '../../components/transition';
-import { gsap } from "gsap";
+import { gsap, Power4 } from "gsap";
 import { useEffect, useRef } from 'react';
-import { Power3, Power4 } from "gsap";
 
 import ITS_tab_sec from '../../components/sections/ITS_tab_sec';
 
@@ -43,15 +41,15 @@ export default function Home_page() {
   var tl_1 = gsap.timeline()
 
   useEffect(() => {
-
-    // Page Transition Code
-
     tl_1.to(body, {
       opacity: "1",
       pointerEvents: "auto",
       ease: Power4.easeInOut,
       delay: 1.2
     });
+
+    console.log('body is: ', body);
+
     return () => {
       tl_1.to(body, {
         opacity: "0",
@@ -100,7 +98,8 @@ export default function Home_page() {
 
       <div ref={(el) => (body = el)} className="Headd">
         <Header />
-        <Home_spotlight_slider />
+        <h1>Hello</h1>
+        {/* <Home_spotlight_slider />
         <Agile />
         <Vlu_assets />
         <Park />
@@ -109,7 +108,7 @@ export default function Home_page() {
         <ITS_tab_sec/>
         <Sticky className='fix-sec'>
           <Client />
-        </Sticky>
+        </Sticky> */}
         {/* <News /> */}
         <Footer />
       </div>
