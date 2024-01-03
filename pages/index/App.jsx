@@ -9,7 +9,7 @@ import React, { useState, useRef } from 'react';
 import searchIconBlk from '../../assets/img/svg/search_icon_blk.svg';
 import closeIconWht from '../../assets/img/svg/close_icon_wht.svg';
 
-import HomePage from "./HomePage";
+// import HomePage from "./HomePage";
 // import Park_page from "./pages/park_page";
 // import Park_inside_page from "./pages/park_inside_page";
 // import Search_page from "./pages/search_page";
@@ -1200,7 +1200,7 @@ const bk_vst_sendEmail = async (e) => {
 
     return (
         <>
-            <HomePage />
+            {/* <HomePage /> */}
             {/* <Scroll/> */}
 
             {/* <BrowserRouter> */}
