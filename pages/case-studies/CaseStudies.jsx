@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect , useRef }  from 'react'
 
 import Header from '../../components/global/header';
 import Client_spotlight from '../../components/spotlight/client_spotlight';
@@ -9,22 +9,13 @@ import Conversation_form from '../../components/sections/conversation_form';
 import Footer from '../../components/global/footer';
 
 import Transition from '../../components/transition';
-import { gsap } from "gsap/dist/gsap";
-import { useEffect , useRef } from 'react';
-import { Power3, Power4 } from "gsap/dist/gsap";
-import Client_form_sec from '../../components/sections/client/client_form_sec';
-import Sticky from 'react-sticky-el';
+import { gsap, Power4 } from "gsap/dist/gsap";
 
-
-export default function Solution_page() {
-
+export default function Page() {
   let body = useRef(null);
   var tl_1 = gsap.timeline()
 
   useEffect(() => {
-
-
-
     tl_1.to(body,{
       opacity: "1",
       pointerEvents: "auto",
@@ -37,7 +28,6 @@ export default function Solution_page() {
         pointerEvents: 'none'
       });
     }
-
   })
 
   return (
@@ -56,7 +46,7 @@ export default function Solution_page() {
               {/* <Client_form_sec/> */}
 
               <Client_testimonial/>
-              <div style={{borderTop: "1px solid rgb(235 125 43 / 73%)"}}></div>
+              <div style={{ borderTop: "1px solid rgb(235 125 43 / 73%)" }}></div>
               <Conversation_form/>
               <Footer/>
 
