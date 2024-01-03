@@ -48,8 +48,6 @@ export default function Home_page() {
       delay: 1.2
     });
 
-    console.log('body is: ', body);
-
     return () => {
       tl_1.to(body, {
         opacity: "0",
@@ -98,8 +96,7 @@ export default function Home_page() {
 
       <div ref={(el) => (body = el)} className="Headd">
         <Header />
-        <h1>Hello</h1>
-        {/* <Home_spotlight_slider />
+        <Home_spotlight_slider />
         <Agile />
         <Vlu_assets />
         <Park />
@@ -108,7 +105,7 @@ export default function Home_page() {
         <ITS_tab_sec/>
         <Sticky className='fix-sec'>
           <Client />
-        </Sticky> */}
+        </Sticky>
         {/* <News /> */}
         <Footer />
       </div>
