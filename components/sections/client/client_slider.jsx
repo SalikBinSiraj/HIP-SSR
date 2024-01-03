@@ -10,7 +10,7 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import useFetch from "react-fetch-hook";
 
-export default function Client_slider() {
+function Client_slider() {
 
     const custm_slider = {
         arrows: true,
@@ -201,3 +201,5 @@ export default function Client_slider() {
         </>
     )
 }
+
+export default Client_slider;
