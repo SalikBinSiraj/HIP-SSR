@@ -1,5 +1,5 @@
 import React from 'react'
-// import Slider from 'react-slick';
+import Slider from 'react-slick/dist/react-slick';
 import '../../../assets/css/social.css';
 import '../../../assets/css/park_gallery.css';
 import '../../../assets/css/client_slider.css';
@@ -139,7 +139,7 @@ function Client_slider() {
 
                 <div className='row no_LR_margin'>
                     <div className='col-12 no_padding p_opacity' ref={social_para2} id='social_para2'>
-                        {/* <Slider {...custm_slider} className=' custm_main_slider social_main_slider'> */}
+                        <Slider {...custm_slider} className=' custm_main_slider social_main_slider'>
 
 
                         {data && data.map(({ id , acf , title , content , slug}) => (
@@ -194,7 +194,7 @@ function Client_slider() {
                                 </div>
                             </div> */}
 
-                        {/* </Slider> */}
+                        </Slider>
                     </div>
                 </div>
             </div>
