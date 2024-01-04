@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from 'react-slick/dist/react-slick';
+import { Slider } from 'react-slick';
 import '../../../assets/css/social.css';
 import '../../../assets/css/park_gallery.css';
 import '../../../assets/css/client_slider.css';
