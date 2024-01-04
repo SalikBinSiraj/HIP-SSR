@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 import quoteIcon from '../../../assets/img/quote_icon.png';
 

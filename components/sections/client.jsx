@@ -2,7 +2,7 @@ import React from 'react'
 import '../../assets/css/client.css'
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import $ from "jquery";
 
 import Frame1 from '../../assets/img/svg/Auto/SVG/Frame 1Auto.svg'

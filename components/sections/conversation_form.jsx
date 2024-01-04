@@ -4,7 +4,7 @@ import emailjs from 'emailjs-com';
 import { useRef, useState } from 'react';
 import { gsap } from "gsap/dist/gsap";
 import { useEffect } from 'react';
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import $ from 'jquery';
 
 import conversation from '../../assets/img/conversation_img.webp'
