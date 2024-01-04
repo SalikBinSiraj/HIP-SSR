@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
+// import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import useFetch from "react-fetch-hook";
 
 function Client_slider() {
@@ -69,7 +69,7 @@ function Client_slider() {
 
 
     // gloabl line GSAP
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
     // Heading text animation variable
     const social_hd = useRef(null);
