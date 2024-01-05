@@ -12,7 +12,7 @@ import Client from '../../components/sections/client';
 
 // import Cta from '../../components/sections/cta';
 import Footer from '../../components/global/footer';
-import Sticky from 'react-sticky-el';
+// import Sticky from 'react-sticky-el';
 
 import Transition from '../../components/transition';
 import { gsap, Power4 } from "gsap";
@@ -103,9 +103,9 @@ export default function Home_page() {
         <Intg_solution />
         <Esg />
         <ITS_tab_sec/>
-        <Sticky className='fix-sec'>
+        {/* <Sticky className='fix-sec'> */}
           <Client />
-        </Sticky>
+        {/* </Sticky> */}
         {/* <News /> */}
         <Footer />
       </div>

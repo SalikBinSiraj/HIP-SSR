@@ -10,29 +10,6 @@ import searchIconBlk from '../../assets/img/svg/search_icon_blk.svg';
 import closeIconWht from '../../assets/img/svg/close_icon_wht.svg';
 
 import HomePage from "./HomePage";
-// import Park_page from "./pages/park_page";
-// import Park_inside_page from "./pages/park_inside_page";
-// import Search_page from "./pages/search_page";
-// import Explore_page from "./pages/explore_page";
-// import Esg_page from "./pages/esg_page";
-// import Solution_page from "./pages/solution_page";
-// import Strategic_land_acquisition_page from "./pages/solution/strategic_land_acquisition_page";
-// import Property_management_page from "./pages/solution/property_management_page";
-// import Park_const_developed_page from "./pages/solution/park_const_developed_page";
-// import Park_comp_app_page from "./pages/solution/park_comp_app_page";
-// import Contact_page from "./pages/contact_page";
-// import Press_release_page from "./pages/press_release_page";
-// import Error_page from "./pages/error_page";
-// import Privacy_policy from "./pages/privacy_page";
-// import Disclaimer_page from "./pages/disclaimer_page";
-// import Blog_page from "./pages/blog_page";
-// import Blog_inside_page from "./pages/blog_inside_page";
-// import Blog_category_page from "./pages/blog_category_page";
-// import Blog_tags_page from "./pages/blog_tags_page";
-// import Client_page from "./pages/client_page";
-// import Client_inside_pg from "./pages/client_inside_pg";
-// import Event_page from "./pages/event_page";
-// import Media_page from "./pages/media_page";
 import emailjs from 'emailjs-com';
 import $ from "jquery";
 // import ScrollToTop from '../src/components/ScrollToTop';
@@ -1202,53 +1179,6 @@ const bk_vst_sendEmail = async (e) => {
         <>
             <HomePage />
             {/* <Scroll/> */}
-
-            {/* <BrowserRouter> */}
-                {/* <ScrollToTop /> */}
-                {/* <SmoothScroll/> */}
-
-                {/* <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route exact path="/industrial-and-logistics-parks-in-india" element={<Park_page />} />
-                    <Route exact path="/:slug" element={<Park_inside_page />} />
-                    <Route exact path="/search/:name" element={<Search_page />} />
-                    <Route exact path="/explore" element={<Explore_page />} />
-                    <Route exact path="/sustainability" element={<Esg_page />} />
-                    <Route exact path='/solutions' element={<Solution_page />} />
-                    <Route exact path='/solutions/strategic-land-acquisition' element={<Strategic_land_acquisition_page />} />
-                    <Route exact path='/solutions/property-management' element={<Property_management_page />} />
-                    <Route exact path='/solutions/park-construction-and-development' element={<Park_const_developed_page />} />
-                    <Route exact path='/solutions/park-compliances-and-approvals' element={<Park_comp_app_page />} />
-
-                    <Route exact path='/contact' element={<Contact_page />} />
-
-                    <Route exact path='/press_releases/:slug' element={<Press_release_page />} />
-                    <Route exact path='/media/press_releases/:slug' element={<Press_release_page />} />
-                    <Route exact path='/privacy_policy' element={<Privacy_policy />} />
-                    <Route exact path='/disclaimer' element={<Disclaimer_page />} />
-
-                    <Route exact path='/blog' element={<Blog_page />} />
-                    <Route exact path='/blog/:slug' element={<Blog_inside_page />} />
-                    <Route exact path='/blog/category/:id' element={<Blog_category_page />} />
-                    <Route exact path='/blog/tags/:id' element={<Blog_tags_page />} />
-                    <Route exact path='/case-studies' element={<Client_page />} />
-                    <Route exact path='/case-studies/:slug' element={<Client_inside_pg />} />
-                    <Route exact path='/events' element={<Event_page />} />
-                    <Route exact path='/events/:slug' element={<Event_page />} />
-
-                    <Route exact path="/event/:slug" element={<Home />} />
-
-
-                    <Route exact path='/media' element={<Media_page />} />
-                    <Route exact path='/media/:slug' element={<Media_page />} />
-                    <Route exact path='/parks-availability' element={<Elsc_page />} />
-
-                    <Route path="*" element={<Error_page />} />
-                    <Route path="/page-not-found" element={<Error_page />} />
-
-                </Routes> */}
-
-            {/* </BrowserRouter> */}
 
             {/*Enquire Sticky Button  */}
             <a className='enq_sticky_btn'>Enquire Now</a>
