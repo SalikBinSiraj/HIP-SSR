@@ -11,6 +11,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import useFetch from "react-fetch-hook";
 
 function Client_slider() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const custm_slider = {
         arrows: true,
@@ -139,7 +140,7 @@ function Client_slider() {
 
                 <div className='row no_LR_margin'>
                     <div className='col-12 no_padding p_opacity' ref={social_para2} id='social_para2'>
-                        <Slider {...custm_slider} className=' custm_main_slider social_main_slider'>
+                        <SliderComponent {...custm_slider} className=' custm_main_slider social_main_slider'>
 
 
                         {data && data.map(({ id , acf , title , content , slug}) => (
@@ -194,7 +195,7 @@ function Client_slider() {
                                 </div>
                             </div> */}
 
-                        </Slider>
+                        </SliderComponent>
                     </div>
                 </div>
             </div>
