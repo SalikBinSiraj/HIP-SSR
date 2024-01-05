@@ -12,8 +12,7 @@ import Client from '../../components/sections/client';
 
 // import Cta from '../../components/sections/cta';
 import Footer from '../../components/global/footer';
-import pkg from 'react-sticky-el';
-const { Sticky } = pkg;
+import Sticky from 'react-sticky-el';
 
 import Transition from '../../components/transition';
 import { gsap, Power4 } from "gsap";
@@ -36,7 +35,7 @@ import { Helmet } from 'react-helmet';
 
 
 export default function Home_page() {
-
+  const StickyComponent = typeof window === 'undefined' ? Sticky.default : Sticky;
 
   let body = useRef(null);
   var tl_1 = gsap.timeline()
@@ -104,9 +103,9 @@ export default function Home_page() {
         <Intg_solution />
         <Esg />
         <ITS_tab_sec/>
-        <Sticky className='fix-sec'>
+        <StickyComponent className='fix-sec'>
           <Client />
-        </Sticky>
+        </StickyComponent>
         {/* <News /> */}
         <Footer />
       </div>
