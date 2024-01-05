@@ -8,7 +8,7 @@ import Transition from '../../components/transition';
 import { gsap } from "gsap/dist/gsap";
 import { useEffect , useRef } from 'react';
 import { Power3, Power4 } from "gsap/dist/gsap";
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import rightArrow from '../../assets/img/svg/sldr_right_arrow_wht.svg'
 
