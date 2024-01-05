@@ -9,6 +9,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Chakan_V_eoc from '../ease_of_connect_elsc/chakan_V_eoc';
 
 export default function Chakan_v_mob_slider_elsc() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const elsc_prk_sld = {
         arrows: true,
@@ -22,7 +23,7 @@ export default function Chakan_v_mob_slider_elsc() {
 
   return (
     <>
-      <Slider {...elsc_prk_sld} className='elsc_prk_sld'>
+      <SliderComponent {...elsc_prk_sld} className='elsc_prk_sld'>
 
         {/*------------ Slide 1   */}
         <div className='ep_sld eps1'>
@@ -405,7 +406,7 @@ export default function Chakan_v_mob_slider_elsc() {
 
         </div>
 
-      </Slider>
+      </SliderComponent>
 
 
 

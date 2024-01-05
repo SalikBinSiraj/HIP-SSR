@@ -14,6 +14,7 @@ import $ from "jquery";
 import { useEffect } from 'react';
 // import Vimeo from '@u-wave/react-vimeo';
 export default function Park_gallery() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     let slug = usePageContext().routeParams.slug
     const { isLoading, data, error } = useFetch(
@@ -163,7 +164,7 @@ export default function Park_gallery() {
 
                                     </div> */}
 
-                                    <Slider {...park_photo} className='park_photo_slider'>
+                                    <SliderComponent {...park_photo} className='park_photo_slider'>
 
                                         {/* item */}
 
@@ -175,7 +176,7 @@ export default function Park_gallery() {
                                             </div>
                                         ))}
 
-                                    </Slider>
+                                    </SliderComponent>
                                     {/* Siteplan lightbox START*/}
                                     <div className='lightbox_btn siteplan_btn'>
                                         <img src={lightBoxIcon}></img>
@@ -187,7 +188,7 @@ export default function Park_gallery() {
                                 {/* Photo */}
                                 <div id="photos" className="tab-pane fade">
 
-                                    <Slider {...park_photo} className='park_photo_slider'>
+                                    <SliderComponent {...park_photo} className='park_photo_slider'>
 
                                         {/* item */}
 
@@ -199,7 +200,7 @@ export default function Park_gallery() {
                                             </div>
                                         ))}
 
-                                    </Slider>
+                                    </SliderComponent>
 
                                     {/* Photo lightbox START*/}
                                     <div className='lightbox_btn photo_btn'>
@@ -212,7 +213,7 @@ export default function Park_gallery() {
                                 {/* Video */}
                                 <div id="video" className="tab-pane fade">
 
-                                    <Slider {...park_photo} className='park_photo_slider'>
+                                    <SliderComponent {...park_photo} className='park_photo_slider'>
 
                                         {/* item */}
 
@@ -229,7 +230,7 @@ export default function Park_gallery() {
 
 
 
-                                    </Slider>
+                                    </SliderComponent>
 
                                 </div>
                             </div>
@@ -244,7 +245,7 @@ export default function Park_gallery() {
                 <div className='inner_light_box siteplan_inner'>
                     <img className='close_btn' src={closeIconWht}></img>
 
-                    <Slider {...park_lightbox_photo} className='park_lightbox_photo'>
+                    <SliderComponent {...park_lightbox_photo} className='park_lightbox_photo'>
 
                         {acf.site_plan.map(siteplan_photo => (
                             <div className='lb_prk_sld prk_siteplan_sld' key={id}>
@@ -254,7 +255,7 @@ export default function Park_gallery() {
                             </div>
                         ))}
 
-                    </Slider>
+                    </SliderComponent>
                 </div>
             </div>
             {/* Siteplan Lightbox End*/}
@@ -266,7 +267,7 @@ export default function Park_gallery() {
                 <div className='inner_light_box'>
                     <img className='close_btn' src={closeIconWht}></img>
 
-                    <Slider {...park_lightbox_photo} className='park_lightbox_photo'>
+                    <SliderComponent {...park_lightbox_photo} className='park_lightbox_photo'>
 
                         {acf.photo.map(sngl_photo => (
                             <div className='lb_prk_sld' key={id}>
@@ -276,7 +277,7 @@ export default function Park_gallery() {
                             </div>
                         ))}
 
-                    </Slider>
+                    </SliderComponent>
                 </div>
             </div>
             {/* Photo Lightbox End*/}

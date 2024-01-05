@@ -8,6 +8,7 @@ import useFetch from "react-fetch-hook";
 import whiteBtnArrow from '../../../assets/img/svg/white_btn_arrow.svg'
 
 export default function Goa_oth_slider() {
+  const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
   const { isLoading, data, error } = useFetch(
     "https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/parks/?categories=5"
@@ -48,7 +49,7 @@ export default function Goa_oth_slider() {
   return (
     <>
 
-          <Slider {...park_slider} className='park_main_slider other_park_slider ahmedabad_oth_slider'>
+          <SliderComponent {...park_slider} className='park_main_slider other_park_slider ahmedabad_oth_slider'>
 
                 {/* slider item   */}
                 {data && data.map(({ id ,title , acf , content , slug}) => (
@@ -251,7 +252,7 @@ export default function Goa_oth_slider() {
                 </div>
               </div> */}
 
-          </Slider>
+          </SliderComponent>
 
     </>
   )

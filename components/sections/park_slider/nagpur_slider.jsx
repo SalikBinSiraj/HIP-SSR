@@ -6,6 +6,7 @@ import '../../../assets/css/park.css';
 import park1 from '../../../assets/img/park1.webp';
 
 export default function Nagpur_slider() {
+  const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
   const park_slider = {
     arrows: true,
@@ -60,7 +61,7 @@ export default function Nagpur_slider() {
         </div>
 
         <div className='park_slider_outer_dv'>
-            <Slider {...park_slider} className='park_main_slider'>
+            <SliderComponent {...park_slider} className='park_main_slider'>
 
 
 
@@ -103,7 +104,7 @@ export default function Nagpur_slider() {
                 </div>
 
 
-            </Slider>
+            </SliderComponent>
           </div>
       </div>
     </>

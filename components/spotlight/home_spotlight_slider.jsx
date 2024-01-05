@@ -16,6 +16,7 @@ import hipTag from '../../assets/img/hip_tag.png';
 import hipSpotlight from '../../assets/video/hip_spotlight.mp4';
 
 export default function Home_spotlight_slider() {
+  const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
   const [isMuted, setIsMuted] = useState(true);
     const [currentSlide, setCurrentSlide] = useState(0);
     const sliderRef = React.createRef();
@@ -130,7 +131,7 @@ export default function Home_spotlight_slider() {
         <div className='home_spotlight_slider_sec ' >
 
 
-                <Slider {...home_slider} className='home_slider' ref={sliderRef}>
+                <SliderComponent {...home_slider} className='home_slider' ref={sliderRef}>
 
 
 
@@ -184,7 +185,7 @@ export default function Home_spotlight_slider() {
 
 
 
-                </Slider>
+                </SliderComponent>
 
                 {/* <img className='sld_arrow sticky_arrow chrome_spot_img' src={require('../../assets/img/home_sldr_arrow.png')}></img>
                 <img className='sld_arrow sticky_arrow safari_spot_img' src={require('../../assets/img/home_sldr_arrow_safari.png')}></img> */}

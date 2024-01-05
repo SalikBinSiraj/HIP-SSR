@@ -20,6 +20,7 @@ import greenCover from '../../assets/img/svg/work/Green cover.svg'
 import barrierfreeDesign from '../../assets/img/svg/work/Barrier free design.svg'
 
 export default function Wrk_envrmnt() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const work_slider = {
         arrows: true,
@@ -107,7 +108,7 @@ export default function Wrk_envrmnt() {
 
                         <div className='col-12 p_opacity' ref={work_fade} id='work_fade'>
 
-                            <Slider {...work_slider} className='work_slider'>
+                            <SliderComponent {...work_slider} className='work_slider'>
 
                                 <div className='wrk_sld ws_1'>
                                     <div className='wrk_content'>
@@ -172,7 +173,7 @@ export default function Wrk_envrmnt() {
                                     </div>
                                 </div>
 
-                            </Slider>
+                            </SliderComponent>
 
                         </div>
 

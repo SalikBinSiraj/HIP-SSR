@@ -18,6 +18,7 @@ import beFuture5 from '../../assets/img/be_future_img_5.jpg'
 import closeIconWht from '../../assets/img/svg/close_icon_wht.svg'
 
 export default function Be_future() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     // gloabl line GSAP
     gsap.registerPlugin(ScrollTrigger);
@@ -353,7 +354,7 @@ export default function Be_future() {
 
                     <div className='col-lg-6 col-md-12 col-12 ing_solu_col_2 convert_form_col2 p_opacity' ref={be_fut_para} id="be_fut_para">
 
-                        <Slider {...be_future_slider} className='be_future_slider'>
+                        <SliderComponent {...be_future_slider} className='be_future_slider'>
                             <div className='be_fut_sld'>
                                 <img className=' ' src={beFuture1} ></img>
                             </div>
@@ -369,7 +370,7 @@ export default function Be_future() {
                             <div className='be_fut_sld'>
                                 <img className=' ' src={beFuture5} ></img>
                             </div>
-                        </Slider>
+                        </SliderComponent>
 
                     </div>
 

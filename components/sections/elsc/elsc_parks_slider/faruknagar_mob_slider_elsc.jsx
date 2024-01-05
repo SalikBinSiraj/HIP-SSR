@@ -8,6 +8,8 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Faruknagar_eoc from "../ease_of_connect_elsc/faruknagar_eoc";
 
 export default function Faruknagar_mob_slider_elsc() {
+  const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
+
   const elsc_prk_sld = {
     arrows: true,
     infinite: false,
@@ -18,7 +20,7 @@ export default function Faruknagar_mob_slider_elsc() {
 
   return (
     <>
-      <Slider {...elsc_prk_sld} className="elsc_prk_sld">
+      <SliderComponent {...elsc_prk_sld} className="elsc_prk_sld">
 
         {/*------------ Slide 1     */}
         <div className="ep_sld eps1">
@@ -79,8 +81,8 @@ export default function Faruknagar_mob_slider_elsc() {
             <div className="ep_divider"></div>
 
             <div className="ep_ease_connect_dv">
-              
-              
+
+
               <Faruknagar_eoc/>
               <a class="bksite_sldr book_visit_btn">Book a site visit</a>
             </div>
@@ -158,7 +160,7 @@ export default function Faruknagar_mob_slider_elsc() {
             <div className="ep_divider"></div>
 
             <div className="ep_ease_connect_dv">
-              
+
               <Faruknagar_eoc/>
               <a class="bksite_sldr book_visit_btn">Book a site visit</a>
             </div>
@@ -240,7 +242,7 @@ export default function Faruknagar_mob_slider_elsc() {
             <div className="ep_divider"></div>
 
             <div className="ep_ease_connect_dv">
-              
+
               <Faruknagar_eoc/>
 
               <a class="bksite_sldr book_visit_btn">Book a site visit</a>
@@ -323,10 +325,10 @@ export default function Faruknagar_mob_slider_elsc() {
               </div>
             </div>
 
-            <div className='ep_divider'></div> 
+            <div className='ep_divider'></div>
 
             <div className='ep_ease_connect_dv'>
-              
+
               <Faruknagar_eoc/>
 
               <a class="bksite_sldr book_visit_btn">Book a site visit</a>
@@ -398,10 +400,10 @@ export default function Faruknagar_mob_slider_elsc() {
 
               </div>
 
-              <div className='ep_divider'></div> 
+              <div className='ep_divider'></div>
 
               <div className='ep_ease_connect_dv'>
-                  
+
                   <Faruknagar_eoc/>
                   <a class="bksite_sldr book_visit_btn">Book a site visit</a>
 
@@ -421,7 +423,7 @@ export default function Faruknagar_mob_slider_elsc() {
 
         </div>
 
-      </Slider>
+      </SliderComponent>
 
 
       {/* ------------------------------ Parks Image popup code ------------------------------ */}

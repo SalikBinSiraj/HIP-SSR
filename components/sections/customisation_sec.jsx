@@ -14,6 +14,7 @@ import timelyProject from '../../assets/img/Timely_project.jpg'
 import customiseSlgImg from '../../assets/img/customise_slg_img.jpg'
 
 export default function Customisation_sec() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const custm_slider = {
         arrows: true,
@@ -162,7 +163,7 @@ export default function Customisation_sec() {
 
             <div className='row no_LR_margin'>
                 <div className='col-12 no_padding p_opacity' ref={custm_para2} id='custm_para2'>
-                    <Slider {...custm_slider} className=' custm_main_slider ' >
+                    <SliderComponent {...custm_slider} className=' custm_main_slider ' >
 
                         <div className='custm_outer_sld'>
                             <div className='custm_inner'>
@@ -237,7 +238,7 @@ export default function Customisation_sec() {
                             </div>
                         </div>
 
-                    </Slider>
+                    </SliderComponent>
                 </div>
             </div>
         </div>

@@ -16,6 +16,7 @@ import block1 from '../../../../assets/img/elsc_landing_pg/Bilaspur_II_map/popup
 import block2 from '../../../../assets/img/elsc_landing_pg/Bilaspur_II_map/popup_img/Block_2.jpg'
 
 export default function Bilaspur_slider_elsc() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const elsc_prk_sld = {
         arrows: true,
@@ -29,7 +30,7 @@ export default function Bilaspur_slider_elsc() {
 
   return (
     <>
-      <Slider {...elsc_prk_sld} className='elsc_prk_sld'>
+      <SliderComponent {...elsc_prk_sld} className='elsc_prk_sld'>
 
         {/*------------ Slide 1     */}
         <div className='ep_sld eps1'>
@@ -176,9 +177,7 @@ export default function Bilaspur_slider_elsc() {
 
         </div>
 
-      </Slider>
-
-
+      </SliderComponent>
 
       {/* ------------------------------ Parks Image popup code ------------------------------ */}
 

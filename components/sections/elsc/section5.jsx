@@ -23,6 +23,7 @@ import _3plPdf from '../../../assets/pdf/3PL_player.pdf'
 import forsocPdf from '../../../assets/pdf/Fosroc.pdf'
 
 export default function Section5() {
+  const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
   const custm_slider = {
     arrows: true,
@@ -93,7 +94,7 @@ export default function Section5() {
 
             <div className="col-12 no_padding sec5_col2">
 
-              <Slider {...custm_slider} className=' custm_main_slider social_main_slider CS_slider_elsc_landing'>
+              <SliderComponent {...custm_slider} className=' custm_main_slider social_main_slider CS_slider_elsc_landing'>
 
                   <div className='custm_outer_sld'>
                       <div className='cs_custm_inner'>
@@ -140,7 +141,7 @@ export default function Section5() {
                       </div>
                   </div>
 
-              </Slider>
+              </SliderComponent>
 
             </div>
 

@@ -9,6 +9,7 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Shoolagiri_eoc from '../ease_of_connect_elsc/shoolagiri_eoc';
 
 export default function Shoolagiri_mob_slider_elsc() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const elsc_prk_sld = {
         arrows: true,
@@ -22,7 +23,7 @@ export default function Shoolagiri_mob_slider_elsc() {
 
   return (
     <>
-      <Slider {...elsc_prk_sld} className='elsc_prk_sld'>
+      <SliderComponent {...elsc_prk_sld} className='elsc_prk_sld'>
 
         {/*------------ Slide 1   */}
         <div className='ep_sld eps1'>
@@ -76,10 +77,10 @@ export default function Shoolagiri_mob_slider_elsc() {
 
                 </div>
 
-                <div className='ep_divider'></div> 
+                <div className='ep_divider'></div>
 
                 <div className='ep_ease_connect_dv'>
-                    
+
                     <Shoolagiri_eoc/>
 
                     <a class="bksite_sldr book_visit_btn">Book a site visit</a>
@@ -88,7 +89,7 @@ export default function Shoolagiri_mob_slider_elsc() {
 
 
             </div>
-            
+
             <div className='ep_sld_two'>
                 <div className='ep_map_dv'>
                     <img src={require('../../../../assets/img/elsc_landing_pg/Hosur_map/thumb/Hosur_I_Bloc_B.png')}></img>
@@ -153,10 +154,10 @@ export default function Shoolagiri_mob_slider_elsc() {
 
                 </div>
 
-                <div className='ep_divider'></div> 
+                <div className='ep_divider'></div>
 
                 <div className='ep_ease_connect_dv'>
-                    
+
                     <Shoolagiri_eoc/>
 
                     <a class="bksite_sldr book_visit_btn">Book a site visit</a>
@@ -165,7 +166,7 @@ export default function Shoolagiri_mob_slider_elsc() {
 
 
             </div>
-            
+
             <div className='ep_sld_two'>
                 <div className='ep_map_dv'>
                     <img src={require('../../../../assets/img/elsc_landing_pg/Hosur_map/thumb/Hosur_I_Block_D.png')}></img>
@@ -229,10 +230,10 @@ export default function Shoolagiri_mob_slider_elsc() {
 
                 </div>
 
-                <div className='ep_divider'></div> 
+                <div className='ep_divider'></div>
 
                 <div className='ep_ease_connect_dv'>
-                    
+
                     <Shoolagiri_eoc/>
 
                     <a class="bksite_sldr book_visit_btn">Book a site visit</a>
@@ -253,9 +254,9 @@ export default function Shoolagiri_mob_slider_elsc() {
 
         </div>
 
-      </Slider>
+      </SliderComponent>
 
-      
+
 
       {/* ------------------------------ Parks Image popup code ------------------------------ */}
 
@@ -355,10 +356,10 @@ export default function Shoolagiri_mob_slider_elsc() {
             </TransformWrapper>
         </div>
 
-      <div className='prk_img_popup_overlay'></div> 
-      
-       
-      
+      <div className='prk_img_popup_overlay'></div>
+
+
+
     </>
   )
 }

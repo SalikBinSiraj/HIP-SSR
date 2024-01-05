@@ -11,6 +11,7 @@ import $ from "jquery";
 import closeIconWhite from '../../../assets/img/svg/close_icon_wht.svg';
 
 export default function Event_popup_slider() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     let { slug } = useParams();
     const { isLoading, data, error } = useFetch(
@@ -58,7 +59,7 @@ export default function Event_popup_slider() {
             {data && data.map(({ id , acf , title , content , event_year}) => (
                 <div>
                     <h3 className='event_hd_inside' dangerouslySetInnerHTML={{ __html: title.rendered }}></h3>
-                    <Slider {...event_img_slider} className='park_lightbox_photo event_img_sld'>
+                    <SliderComponent {...event_img_slider} className='park_lightbox_photo event_img_sld'>
 
                         {acf.youtube_video_filed.map(event_ytb_video =>
                             <div className='lb_prk_sld' key={id}>
@@ -71,7 +72,7 @@ export default function Event_popup_slider() {
                             </div>
                         )}
 
-                    </Slider>
+                    </SliderComponent>
                     <p className='cstm_para event_para' dangerouslySetInnerHTML={{ __html: content.rendered }}></p>
                 </div>
             ))}

@@ -23,6 +23,7 @@ import popupBlock4 from '../../../../assets/img/elsc_landing_pg/chakan_v_map/pop
 import popupBlock5 from '../../../../assets/img/elsc_landing_pg/chakan_v_map/popup_img/Block_5.jpg'
 
 export default function Chakan_v_slider_elsc() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const elsc_prk_sld = {
         arrows: true,
@@ -36,7 +37,7 @@ export default function Chakan_v_slider_elsc() {
 
   return (
     <>
-      <Slider {...elsc_prk_sld} className='elsc_prk_sld'>
+      <SliderComponent {...elsc_prk_sld} className='elsc_prk_sld'>
 
         {/*------------ Slide 1   */}
         <div className='ep_sld eps1'>
@@ -418,7 +419,7 @@ export default function Chakan_v_slider_elsc() {
 
         </div>
 
-      </Slider>
+      </SliderComponent>
 
 
 

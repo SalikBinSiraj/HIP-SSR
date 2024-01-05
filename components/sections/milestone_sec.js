@@ -7,6 +7,7 @@ import { useEffect , useRef} from 'react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function Milestone_sec() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const milstone_slider = {
         arrows: true,
@@ -20,7 +21,7 @@ export default function Milestone_sec() {
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1
-                
+
               }
             },
             {
@@ -48,7 +49,7 @@ export default function Milestone_sec() {
       };
 
     // gloabl line GSAP
-    gsap.registerPlugin(ScrollTrigger); 
+    gsap.registerPlugin(ScrollTrigger);
 
     // Heading text animation variable
     const mile_hd_anmt = useRef(null);
@@ -57,7 +58,7 @@ export default function Milestone_sec() {
     const mile_para = useRef(null);
 
     useEffect(() => {
-    
+
         // Heading text animation code
         gsap.to("#mile_hd_anmt", {
             y:0,
@@ -90,7 +91,7 @@ export default function Milestone_sec() {
   return (
     <>
       <div className='milestone_sec ' id='milestones'>
-            
+
             <div className='cstm_container tab_pd_LR'>
                 <div className='row'>
                     <div className='col-12'>
@@ -114,7 +115,7 @@ export default function Milestone_sec() {
 
             <div className='row no_LR_margin'>
                 <div className='col-12 no_padding p_opacity' ref={mile_para} id='mile_para'>
-                    <Slider {...milstone_slider} className='milstone_main_slider'>
+                    <SliderComponent {...milstone_slider} className='milstone_main_slider'>
 
                         <div className='milstone_sld'>
                             <div className='mils_inner'>
@@ -170,7 +171,7 @@ export default function Milestone_sec() {
                             </div>
                         </div>
 
-                    </Slider>
+                    </SliderComponent>
                 </div>
             </div>
 

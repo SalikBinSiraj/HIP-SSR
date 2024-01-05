@@ -10,6 +10,8 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Adv_horiz() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
+
     const [nav1, setNav1] = useState(null);
     const [nav2, setNav2] = useState(null);
     const [slider1, setSlider1] = useState(null);
@@ -94,7 +96,7 @@ export default function Adv_horiz() {
                         </div>
                         {/* <p className='section_sub_heading adv_horz_sub_hd'>Advantage Horizon</p> */}
                         <div className='p_opacity' ref={adv_hori_fade} id='adv_hori_fade'>
-                            <Slider {...sctr1_settings} className='ad_horzion_nav' asNavFor={nav1} ref={slider => (setSlider2(slider))}>
+                            <SliderComponent {...sctr1_settings} className='ad_horzion_nav' asNavFor={nav1} ref={slider => (setSlider2(slider))}>
 
                                 <div className='adv_hz_outer_nav'>
                                     <div className='ad_hz_inner_nav'>
@@ -132,12 +134,12 @@ export default function Adv_horiz() {
                                     </div>
                                 </div>
 
-                            </Slider>
+                            </SliderComponent>
                         </div>
                     </div>
 
                     <div className='col-lg-6 col-md-6 col-12 info_col p_opacity'  ref={adv_hori_fade} id='adv_hori_fade'>
-                        <Slider {...sctr_settings} className='ad_horzion_sld' asNavFor={nav2} ref={slider => (setSlider1(slider))}>
+                        <SliderComponent {...sctr_settings} className='ad_horzion_sld' asNavFor={nav2} ref={slider => (setSlider1(slider))}>
                             <div className='ad_hz_outer'>
                                 <div className='ad_hz_inner'>
                                     <img src={require('../../assets/img/svg/Sustainability_icon.svg').default} className=''></img>
@@ -191,7 +193,7 @@ export default function Adv_horiz() {
                                     <p className='adv_sub_head'>Fully committed to ensuring 100% safety in all our parks, with 24×7 CCTV coverage, fenced boundaries, fire fighting systems, quick-response emergency systems manned by trained professionals, ambulance on standby, and first-aid centres</p>
                                 </div>
                             </div>
-                        </Slider>
+                        </SliderComponent>
 
                     </div>
 

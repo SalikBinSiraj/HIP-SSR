@@ -13,6 +13,7 @@ import employeeTraining from '../../assets/img/Employee_Training.jpg'
 import diversityInclusion from '../../assets/img/Diversity_inclusion.jpg'
 
 export default function Social() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const custm_slider = {
         arrows: true,
@@ -137,7 +138,7 @@ export default function Social() {
 
                 <div className='row no_LR_margin'>
                     <div className='col-12 no_padding p_opacity' ref={social_para2} id='social_para2'>
-                        <Slider {...custm_slider} className=' custm_main_slider social_main_slider'>
+                        <SliderComponent {...custm_slider} className=' custm_main_slider social_main_slider'>
 
                             <div className='custm_outer_sld'>
                                 <div className='custm_inner'>
@@ -195,7 +196,7 @@ export default function Social() {
                                 </div>
                             </div>
 
-                        </Slider>
+                        </SliderComponent>
                     </div>
                 </div>
             </div>

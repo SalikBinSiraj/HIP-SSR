@@ -9,8 +9,9 @@ import useFetch from "react-fetch-hook";
 import $ from "jquery";
 
 export default function Gb_home_slider() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
-    let { slug } = useParams(); 
+    let { slug } = useParams();
     const { isLoading, data, error } = useFetch(
         `https://phpstack-725513-2688800.cloudwaysapps.com/cms/wp-json/wp/v2/events?per_page=1`
     );
@@ -30,7 +31,7 @@ export default function Gb_home_slider() {
             $('.event_popup').addClass('event_popup_opn');
             // $('.lightbox_overlay').addClass('overlay_open');
             $('body').css('overflow','hidden');
-            
+
         });
 
         $('.ep_cls_btn').on("click", function() {
@@ -41,7 +42,7 @@ export default function Gb_home_slider() {
                 scrollTop: $("#event_sec").offset().top
              }, 100);
         });
-        
+
     })
 
   return (
@@ -50,9 +51,9 @@ export default function Gb_home_slider() {
             {/* <Link to={{pathname: '', hash: '#event_sec'}} > */}
                 <img className='ep_cls_btn' src={require('../../../assets/img/svg/close_icon_wht.svg').default}></img>
             {/* </Link> */}
-            {data && data.map(({ id , acf , content , event_year}) => (                     
+            {data && data.map(({ id , acf , content , event_year}) => (
                 <div>
-                    <Slider {...hm_event_slider} className='park_lightbox_photo event_img_sld'>
+                    <SliderComponent {...hm_event_slider} className='park_lightbox_photo event_img_sld'>
 
                         {acf.youtube_video_filed.map(event_ytb_video =>
                             <div className='lb_prk_sld' key={id}>
@@ -63,7 +64,7 @@ export default function Gb_home_slider() {
                             </div>
                         )}
 
-                    </Slider>
+                    </SliderComponent>
                     <p className='cstm_para event_para' dangerouslySetInnerHTML={{ __html: content.rendered }}></p>
                 </div>
             ))}

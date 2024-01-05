@@ -9,6 +9,8 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Kothur_eoc from '../ease_of_connect_elsc/kothur_eoc';
 
 export default function Kothur_mob_slider_elsc() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
+
 
     const elsc_prk_sld = {
         arrows: true,
@@ -22,7 +24,7 @@ export default function Kothur_mob_slider_elsc() {
 
   return (
     <>
-      <Slider {...elsc_prk_sld} className='elsc_prk_sld'>
+      <SliderComponent {...elsc_prk_sld} className='elsc_prk_sld'>
 
         {/*------------ Slide 1     */}
         <div className='ep_sld eps1'>
@@ -75,7 +77,7 @@ export default function Kothur_mob_slider_elsc() {
                     </div>
                 </div>
 
-                <div className='ep_divider'></div> 
+                <div className='ep_divider'></div>
 
                 <div className='ep_ease_connect_dv'>
                     <Kothur_eoc/>
@@ -84,7 +86,7 @@ export default function Kothur_mob_slider_elsc() {
 
 
             </div>
-            
+
             <div className='ep_sld_two'>
                 <div className='ep_map_dv'>
                     <img src={require('../../../../assets/img/elsc_landing_pg/Kothur_map/thumb/Kothur_Block_A.png')}></img>
@@ -112,7 +114,7 @@ export default function Kothur_mob_slider_elsc() {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className='ep_details'>
                     <div className='ep_dtls_inner'>
                         <div className='dv_lst'>
@@ -146,7 +148,7 @@ export default function Kothur_mob_slider_elsc() {
                     </div>
                 </div>
 
-                <div className='ep_divider'></div> 
+                <div className='ep_divider'></div>
 
                 <div className='ep_ease_connect_dv'>
                     <Kothur_eoc/>
@@ -155,7 +157,7 @@ export default function Kothur_mob_slider_elsc() {
 
 
             </div>
-            
+
             <div className='ep_sld_two'>
                 <div className='ep_map_dv'>
                     <img src={require('../../../../assets/img/elsc_landing_pg/Kothur_map/thumb/Kothur_Block_B.png')}></img>
@@ -219,10 +221,10 @@ export default function Kothur_mob_slider_elsc() {
 
                 </div>
 
-                <div className='ep_divider'></div> 
+                <div className='ep_divider'></div>
 
                 <div className='ep_ease_connect_dv'>
-                    
+
                     <Kothur_eoc/>
 
                     <a class="bksite_sldr book_visit_btn">Book a site visit</a>
@@ -231,7 +233,7 @@ export default function Kothur_mob_slider_elsc() {
 
 
             </div>
-            
+
             <div className='ep_sld_two'>
                 <div className='ep_map_dv'>
                     <img src={require('../../../../assets/img/elsc_landing_pg/Kothur_map/thumb/Kothur_Block_C.png')}></img>
@@ -279,10 +281,10 @@ export default function Kothur_mob_slider_elsc() {
 
                 </div>
 
-                <div className='ep_divider'></div> 
+                <div className='ep_divider'></div>
 
                 <div className='ep_ease_connect_dv'>
-                    
+
                     <Kothur_eoc/>
                     <a class="bksite_sldr book_visit_btn">Book a site visit</a>
 
@@ -290,7 +292,7 @@ export default function Kothur_mob_slider_elsc() {
 
 
             </div>
-            
+
             <div className='ep_sld_two'>
                 <div className='ep_map_dv'>
                     <img src={require('../../../../assets/img/elsc_landing_pg/Kothur_map/thumb/Kothur_Block_D.png')}></img>
@@ -354,10 +356,10 @@ export default function Kothur_mob_slider_elsc() {
 
                 </div>
 
-                <div className='ep_divider'></div> 
+                <div className='ep_divider'></div>
 
                 <div className='ep_ease_connect_dv'>
-                    
+
                     <Kothur_eoc/>
 
                     <a class="bksite_sldr book_visit_btn">Book a site visit</a>
@@ -366,7 +368,7 @@ export default function Kothur_mob_slider_elsc() {
 
 
             </div>
-            
+
             <div className='ep_sld_two'>
                 <div className='ep_map_dv'>
                     <img src={require('../../../../assets/img/elsc_landing_pg/Kothur_map/thumb/Kothur_Block_E.png')}></img>
@@ -431,10 +433,10 @@ export default function Kothur_mob_slider_elsc() {
 
                 </div>
 
-                <div className='ep_divider'></div> 
+                <div className='ep_divider'></div>
 
                 <div className='ep_ease_connect_dv'>
-                    
+
                     <Kothur_eoc/>
 
                     <a class="bksite_sldr book_visit_btn">Book a site visit</a>
@@ -443,7 +445,7 @@ export default function Kothur_mob_slider_elsc() {
 
 
             </div>
-            
+
             <div className='ep_sld_two'>
                 <div className='ep_map_dv'>
                     <img src={require('../../../../assets/img/elsc_landing_pg/Kothur_map/thumb/Kothur_Block_F.png')}></img>
@@ -455,9 +457,9 @@ export default function Kothur_mob_slider_elsc() {
 
         </div>
 
-      </Slider>
+      </SliderComponent>
 
-      
+
 
       {/* ------------------------------ Parks Image popup code ------------------------------ */}
 
@@ -653,10 +655,10 @@ export default function Kothur_mob_slider_elsc() {
             </TransformWrapper>
         </div>
 
-      <div className='prk_img_popup_overlay'></div> 
-      
-       
-      
+      <div className='prk_img_popup_overlay'></div>
+
+
+
     </>
   )
 }

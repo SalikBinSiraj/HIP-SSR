@@ -30,6 +30,7 @@ import popUpBlockH from '../../../../assets/img/elsc_landing_pg/Dobbaspet_I_map/
 import popUpBlockJ from '../../../../assets/img/elsc_landing_pg/Dobbaspet_I_map/popup_img/Block_J.jpg'
 
 export default function Dobaspet_slider_elsc() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     const elsc_prk_sld = {
         arrows: true,
@@ -43,7 +44,7 @@ export default function Dobaspet_slider_elsc() {
 
   return (
     <>
-      <Slider {...elsc_prk_sld} className='elsc_prk_sld'>
+      <SliderComponent {...elsc_prk_sld} className='elsc_prk_sld'>
 
         {/*------------ Slide 1   */}
         <div className='ep_sld eps1'>
@@ -759,7 +760,7 @@ export default function Dobaspet_slider_elsc() {
         </div>
 
 
-      </Slider>
+      </SliderComponent>
 
 
 

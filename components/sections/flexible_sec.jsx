@@ -16,6 +16,7 @@ import customisedStructural from '../../assets/img/customised_structural.jpg'
 
 
 export default function Flexible_sec() {
+    const SliderComponent = typeof window === 'undefined' ? Slider.default : Slider;
 
     // gloabl line GSAP
     gsap.registerPlugin(ScrollTrigger);
@@ -108,7 +109,7 @@ export default function Flexible_sec() {
 
             <div className='row no_LR_margin'>
                 <div className='col-12 p_opacity no_padding' ref={flex_fade} id='flex_fade'>
-                    <Slider {...flex_slider} className='park_main_slider other_park_slider ahmedabad_oth_slider flex_main_slider horz_sld'>
+                    <SliderComponent {...flex_slider} className='park_main_slider other_park_slider ahmedabad_oth_slider flex_main_slider horz_sld'>
 
                         <div className='flex_sld_outer'>
                             <div className='flex_sld_inner'>
@@ -155,7 +156,7 @@ export default function Flexible_sec() {
                                 <div className='flx_ovberlay'></div>
                             </div>
                         </div>
-                    </Slider>
+                    </SliderComponent>
                 </div>
             </div>
         </section>
