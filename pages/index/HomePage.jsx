@@ -12,7 +12,8 @@ import Client from '../../components/sections/client';
 
 // import Cta from '../../components/sections/cta';
 import Footer from '../../components/global/footer';
-import { Sticky } from 'react-sticky-el';
+import pkg from 'react-sticky-el';
+const { Sticky } = pkg;
 
 import Transition from '../../components/transition';
 import { gsap, Power4 } from "gsap";
