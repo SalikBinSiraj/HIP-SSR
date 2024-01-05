@@ -31,7 +31,7 @@ import ITS_tab_sec from '../../components/sections/ITS_tab_sec';
 // const News = loadable(() => import('../../components/sections/news'));
 
 
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 
 export default function Home_page() {

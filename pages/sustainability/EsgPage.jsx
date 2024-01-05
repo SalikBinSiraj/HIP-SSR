@@ -13,7 +13,7 @@ import Transition from '../../components/transition';
 import { gsap } from "gsap";
 import { useEffect , useRef } from 'react';
 import { Power3, Power4 } from "gsap";
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 export default function Esg_page() {
 

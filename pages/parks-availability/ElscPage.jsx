@@ -31,7 +31,7 @@ import { Power3, Power4 } from "gsap";
 
 
 
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 // import Section2_mob from '../../components/sections/elsc/section2_mob';
 
 

@@ -7,7 +7,7 @@ import Footer from '../components/global/footer';
 import Transition from '../components/transition';
 import { useEffect , useRef } from 'react';
 import { gsap, Power3, Power4 } from "gsap/dist/gsap";
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import arrowWhite from '../assets/img/svg/sldr_right_arrow_wht.svg'
 

@@ -6,7 +6,7 @@ import useFetch from "react-fetch-hook";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import $ from "jquery";
 import Error_page from '../../pages/error_page';
 

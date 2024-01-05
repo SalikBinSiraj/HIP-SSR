@@ -16,7 +16,7 @@ import { gsap } from "gsap/dist/gsap";
 import { useEffect , useRef } from 'react';
 import { Power3, Power4 } from "gsap/dist/gsap";
 
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 export default function Explore_page() {
 

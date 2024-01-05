@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../../assets/css/park_inside_spotlight.css';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import arrow from '../../../assets/img/home_sldr_arrow.png'
 import spotlight from '../../../assets/img/solutions_inside/proprty_mang/proprty_mang_spotlight.jpg'

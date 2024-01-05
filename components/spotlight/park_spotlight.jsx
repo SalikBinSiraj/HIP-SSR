@@ -3,7 +3,7 @@ import '../../assets/css/park_inside_spotlight.css';
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import parkSpotlight from '../../assets/img/park_spotlight.jpg';
 import homeSliderArrow from '../../assets/img/home_sldr_arrow.png';

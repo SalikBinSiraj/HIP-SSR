@@ -5,7 +5,7 @@ import '../../assets/css/park_inside_spotlight.css';
 import useFetch from "react-fetch-hook";
 import { useParams } from "react-router-dom";
 import $ from "jquery";
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { useEffect, useRef } from "react";
 
 import arrow from '../../assets/img/home_sldr_arrow.png';

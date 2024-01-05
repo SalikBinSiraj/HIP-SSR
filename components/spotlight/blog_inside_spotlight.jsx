@@ -6,7 +6,7 @@ import '../../assets/css/blog_inside_spotlight.css';
 import { useEffect , useState } from "react";
 import useFetch from "react-fetch-hook";
 import { useParams } from "react-router-dom";
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import $ from "jquery";
 
 export default function Blog_inside_spotlight() {
