@@ -3,9 +3,9 @@ import { useEffect , useRef }  from 'react'
 import Header from '../../components/global/header';
 import Client_spotlight from '../../components/spotlight/client_spotlight';
 import Client_slider from '../../components/sections/client/client_slider';
-// import Client_testimonial from '../../components/sections/client/client_testimonial';
-// import Client from '../../components/sections/client';
-// import Conversation_form from '../../components/sections/conversation_form';
+import Client_testimonial from '../../components/sections/client/client_testimonial';
+import Client from '../../components/sections/client';
+import Conversation_form from '../../components/sections/conversation_form';
 import Footer from '../../components/global/footer';
 
 import Transition from '../../components/transition';
@@ -40,14 +40,14 @@ export default function Page() {
               <Client_spotlight/>
               <Client_slider/>
               {/* <Sticky className='fix-sec'> */}
-                {/* <Client /> */}
+                <Client />
               {/* </Sticky> */}
               {/*  */}
               {/* <Client_form_sec/> */}
 
-              {/* <Client_testimonial/> */}
+              <Client_testimonial/>
               <div style={{ borderTop: "1px solid rgb(235 125 43 / 73%)" }}></div>
-              {/* <Conversation_form/> */}
+              <Conversation_form/>
               <Footer/>
 
           </div>
