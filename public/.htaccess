@@ -11,12 +11,6 @@ Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
 Header always set Frame-Ancestors 'self'
 </IfModule>
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^hiparks.com [NC]
-RewriteRule ^(.*)$ http://www.hiparks.com/$1 [L,R=301]
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
-RewriteRule ^ - [L]
-RewriteRule ^ ./index.html
 RewriteBase /
 RewriteRule ^(.*)?$ http://127.0.0.1:3000/$1 [P,L]
 ErrorDocument 403 /*
